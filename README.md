@@ -2,6 +2,8 @@
 
 A Docker image to provide HTML5 VNC interface to access Ubuntu LXDE + ROS, based on [dorowu/ubuntu-desktop-lxde-vnc](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
 
+![Image from Gyazo](https://i.gyazo.com/044eed360f341c2819023a81aa709bd5.gif)
+
 
 ## Quick Start
 
@@ -18,6 +20,9 @@ Browse http://127.0.0.1:6080/
 ## Docker tags
 
 * [`melodic`, `latest`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/melodic/Dockerfile)
+* [`kinetic`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/kinetic/Dockerfile)
+
+Access [https://github.com/Tiryoh/docker_ros-desktop-vnc/wiki](https://github.com/Tiryoh/docker_ros-desktop-vnc/wiki) to see the build logs.
 
 ## License
 
