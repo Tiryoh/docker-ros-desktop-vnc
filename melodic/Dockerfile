@@ -7,7 +7,7 @@ RUN apt-get update -q && \
     rm -rf /var/lib/apt/lists/*
 RUN useradd -m -d /home/ubuntu ubuntu -p $(perl -e 'print crypt("ubuntu", "salt"),"\n"') && \
     echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-ENV ROS_DISTRO dashing
+ENV ROS_DISTRO melodic
 RUN git clone https://github.com/Tiryoh/ros_setup_scripts_ubuntu.git /tmp/ros_setup_scripts_ubuntu && \
     cd /tmp/ros_setup_scripts_ubuntu && \
     ./ros-melodic-desktop.sh && \
