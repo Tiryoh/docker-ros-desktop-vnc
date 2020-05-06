@@ -1,9 +1,16 @@
 # docker_ros-desktop-vnc
 
+![Docker Automated build](https://img.shields.io/docker/automated/tiryoh/ros-desktop-vnc)
+[![Publish to Registry](https://github.com/Tiryoh/docker_ros-desktop-vnc/workflows/Publish%20to%20Registry/badge.svg?branch=master)](https://github.com/Tiryoh/docker_ros-desktop-vnc/actions?query=workflow%3A%22Publish+to+Registry%22+branch%3Amaster)
+[![](https://img.shields.io/docker/pulls/tiryoh/ros-desktop-vnc.svg)](https://hub.docker.com/r/tiryoh/ros-desktop-vnc)
+
 A Docker image to provide HTML5 VNC interface to access Ubuntu LXDE + ROS, based on [dorowu/ubuntu-desktop-lxde-vnc](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
 
 ![Image from Gyazo](https://i.gyazo.com/044eed360f341c2819023a81aa709bd5.gif)
 
+このツールの詳細については以下の記事で紹介しています。  
+The details of these tools are written in Japanese on this page.  
+https://memoteki.net/archives/2955
 
 ## Quick Start
 
@@ -23,7 +30,8 @@ Browse http://127.0.0.1:6080/.
 * [`melodic`, `latest`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/melodic/Dockerfile)
 * [`kinetic`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/kinetic/Dockerfile)
 
-Access [https://github.com/Tiryoh/docker_ros-desktop-vnc/wiki](https://github.com/Tiryoh/docker_ros-desktop-vnc/wiki) to see the build logs.
+Docker tags and build logs are listed on this page.  
+https://github.com/Tiryoh/docker_ros-desktop-vnc/wiki
 
 ## License
 
