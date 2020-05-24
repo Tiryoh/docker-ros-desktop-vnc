@@ -5,11 +5,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 RUN apt-get update -q && \
     apt-get upgrade -yq && \
-    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata && \
+    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu && \
     rm -rf /var/lib/apt/lists/*
-RUN useradd -m -d /home/ubuntu ubuntu -p $(perl -e 'print crypt("ubuntu", "salt"),"\n"') && \
+RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
+    echo ubuntu:ubuntu | chpasswd && \
     echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 COPY ./ros-noetic-desktop-testing.sh /
-RUN /ros-noetic-desktop-testing.sh && \
+RUN gosu ubuntu /ros-noetic-desktop-testing.sh && \
     rm -rf /var/lib/apt/lists/*
 ENV USER ubuntu
