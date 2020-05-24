@@ -27,6 +27,7 @@ Browse http://127.0.0.1:6080/.
 
 ## Docker tags
 
+* [`noetic`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/noetic/Dockerfile)
 * [`melodic`, `latest`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/melodic/Dockerfile)
 * [`kinetic`](https://github.com/Tiryoh/docker_ros-desktop-vnc/blob/master/kinetic/Dockerfile)
 
