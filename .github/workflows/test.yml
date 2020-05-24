@@ -35,7 +35,7 @@ jobs:
 
       - name: Dump docker image
         run: |
-          docker save $DOCKER_USERNAME/$DOCKER_IMAGENAME:${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }} -o ${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}.tar
+          docker save $DOCKER_USERNAME/$DOCKER_IMAGENAME:${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }} | gzip > ${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}.tar.gz
 
       - uses: actions/upload-artifact@v2
         with:
