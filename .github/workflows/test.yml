@@ -40,4 +40,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: docker-${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}
-          path: ${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}.tar
+          path: ${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}.tar.gz
