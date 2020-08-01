@@ -18,13 +18,13 @@ sudo rosdep init
 rosdep update
 
 sudo apt-get install -y python3-rosinstall python3-rosinstall-generator python3-wstool build-essential python3-vcstool
-# sudo apt-get install -y python3-catkin-tools
+sudo apt-get install -y python3-catkin-tools python3-osrf-pycommon
 
 grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" ~/.bashrc ||
 echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 
-# grep -F `catkin locate --shell-verbs` ~/.bashrc ||
-# echo "source `catkin locate --shell-verbs`" >> ~/.bashrc
+grep -F `catkin locate --shell-verbs` ~/.bashrc ||
+echo "source `catkin locate --shell-verbs`" >> ~/.bashrc
 
 grep -F "ROS_IP" ~/.bashrc ||
 echo "export ROS_IP=127.0.0.1" >> ~/.bashrc
