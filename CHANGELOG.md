@@ -1,4 +1,12 @@
 
+<a name="v0.2.0"></a>
+## [v0.2.0](https://github.com/Tiryoh/docker_ros-desktop-vnc/compare/v0.1.0...v0.2.0) (2020-08-01)
+
+### Feat
+
+* Enable catkin-tools for ROS Noetic ([#11](https://github.com/Tiryoh/docker_ros-desktop-vnc/issues/11))
+
+
 <a name="v0.1.0"></a>
 ## [v0.1.0](https://github.com/Tiryoh/docker_ros-desktop-vnc/compare/v0.0.1...v0.1.0) (2020-05-24)
 
