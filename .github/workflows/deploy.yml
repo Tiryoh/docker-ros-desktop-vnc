@@ -39,7 +39,6 @@ jobs:
       - name: Publish docker image
         env:
           DOCKER_TAGNAME: ${{ matrix.ros-distro }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         id: docker
         run: |
           TIMESTAMP=$(date '+%Y%m%dT%H%M')
