@@ -25,10 +25,10 @@ jobs:
     if: contains(github.event.head_commit.message, '[skip ci]') == false
     strategy:
       matrix:
-        ros-distro: [kinetic, melodic]
+        ros-distro: [kinetic, melodic, noetic]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       - name: Build docker image
         env:
@@ -39,12 +39,18 @@ jobs:
       - name: Publish docker image
         env:
           DOCKER_TAGNAME: ${{ matrix.ros-distro }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         id: docker
         run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin > /dev/null 2>&1
-          docker push $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME
           TIMESTAMP=$(date '+%Y%m%dT%H%M')
+          # ghcr.io
+          echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $DOCKER_USERNAME --password-stdin > /dev/null 2>&1
+          docker tag $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME ghcr.io/$DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME
+          docker tag $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME ghcr.io/$DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP
+          docker push ghcr.io/$DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME
+          docker push ghcr.io/$DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP
+          # docker.io
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u "$DOCKER_USERNAME" --password-stdin > /dev/null 2>&1
+          docker push $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME
           docker tag $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP
           docker push $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP
           echo ::set-output name=timestamp::$TIMESTAMP
