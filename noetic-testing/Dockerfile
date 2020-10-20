@@ -1,0 +1,16 @@
+FROM dorowu/ubuntu-desktop-lxde-vnc:focal
+LABEL maintainer="Tiryoh<tiryoh@gmail.com>"
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN echo "Set disable_coredump false" >> /etc/sudo.conf
+RUN apt-get update -q && \
+    apt-get upgrade -yq && \
+    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu && \
+    rm -rf /var/lib/apt/lists/*
+RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
+    echo ubuntu:ubuntu | chpasswd && \
+    echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+COPY ./ros-noetic-desktop-testing.sh /
+RUN gosu ubuntu /ros-noetic-desktop-testing.sh && \
+    rm -rf /var/lib/apt/lists/*
+ENV USER ubuntu
