@@ -57,7 +57,7 @@ jobs:
           echo ::set-output name=digest::$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP)
 
       - name: Publish docker image as latest
-        if: contains(matrix.ros-distro, 'melodic') == true
+        if: contains(matrix.ros-distro, 'noetic') == true
         env:
           DOCKER_TAGNAME: ${{ matrix.ros-distro }}
         run: |
