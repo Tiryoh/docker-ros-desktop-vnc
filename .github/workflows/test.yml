@@ -11,13 +11,7 @@ env:
   DOCKER_IMAGENAME: ros-desktop-vnc
 
 jobs:
-  skip:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "[Skip CI] ${{ contains(github.event.head_commit.message, '[skip ci]') }}"
-
   build-and-deploy:
-    if: contains(github.event.head_commit.message, '[skip ci]') == false
     continue-on-error: true
     strategy:
       matrix:
