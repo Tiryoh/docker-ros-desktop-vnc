@@ -16,16 +16,15 @@ env:
   GIT_CONFIG_EMAIL: tiryoh@gmail.com
 
 jobs:
-  skip:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "[Skip CI] ${{ contains(github.event.head_commit.message, '[skip ci]') }}"
-
   build-and-deploy:
-    if: contains(github.event.head_commit.message, '[skip ci]') == false
     strategy:
       matrix:
         ros-distro: [kinetic, melodic, noetic, noetic-testing]
+        experimental: [false]
+        include:
+          - ros-distro: noetic-testing
+            experimental: true
+    continue-on-error: ${{ matrix.experimental }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -57,7 +56,7 @@ jobs:
           echo ::set-output name=digest::$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKER_USERNAME/$DOCKER_IMAGENAME:$DOCKER_TAGNAME-$TIMESTAMP)
 
       - name: Publish docker image as latest
-        if: contains(matrix.ros-distro, 'melodic') == true
+        if: contains(matrix.ros-distro, 'noetic') == true
         env:
           DOCKER_TAGNAME: ${{ matrix.ros-distro }}
         run: |
