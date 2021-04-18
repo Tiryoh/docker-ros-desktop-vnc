@@ -26,6 +26,11 @@ jobs:
     strategy:
       matrix:
         ros-distro: [kinetic, melodic, noetic, noetic-testing]
+        experimental: [false]
+        include:
+          - ros-distro: noetic-testing
+            experimental: true
+    continue-on-error: ${{ matrix.experimental }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
