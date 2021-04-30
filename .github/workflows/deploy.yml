@@ -18,8 +18,9 @@ env:
 jobs:
   build-and-deploy:
     strategy:
+      fail-fast: false
       matrix:
-        ros-distro: [kinetic, melodic, melodic-arm64, noetic, noetic-testing]
+        ros-distro: [kinetic, melodic, melodic-arm64, noetic]
         experimental: [false]
         include:
           - ros-distro: noetic-testing
