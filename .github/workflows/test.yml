@@ -15,10 +15,12 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        ros-distro: [kinetic, melodic, noetic, noetic-testing]
+        ros-distro: [kinetic, melodic, melodic-arm64, noetic, noetic-testing]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - uses: docker/setup-qemu-action@v1
 
       - name: Build docker image
         id: docker
