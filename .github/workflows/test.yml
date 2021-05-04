@@ -15,7 +15,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        ros-distro: [kinetic, melodic, melodic-arm64, noetic, noetic-testing]
+        ros-distro: [kinetic, melodic, melodic-arm64, noetic, noetic-testing, noetic-arm64]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

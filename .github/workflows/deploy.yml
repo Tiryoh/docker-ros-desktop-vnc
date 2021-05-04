@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ros-distro: [kinetic, melodic, melodic-arm64, noetic]
+        ros-distro: [kinetic, melodic, melodic-arm64, noetic, noetic-arm64]
         experimental: [false]
         include:
           - ros-distro: noetic-testing
