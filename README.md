@@ -6,6 +6,8 @@
 
 A Docker image to provide HTML5 VNC interface to access Ubuntu LXDE + ROS, based on [dorowu/ubuntu-desktop-lxde-vnc](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
 
+ROS 2 version: https://github.com/Tiryoh/docker-ros2-desktop-vnc
+
 ![Image from Gyazo](https://i.gyazo.com/044eed360f341c2819023a81aa709bd5.gif)
 
 このツールの詳細については以下の記事で紹介しています。  
