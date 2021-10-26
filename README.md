@@ -36,6 +36,43 @@ Browse http://127.0.0.1:6080/.
 Docker tags and build logs are listed on this page.  
 https://github.com/Tiryoh/docker-ros-desktop-vnc/wiki
 
+## FAQ
+
+### `apt update` shows an `GPG error`
+
+Error:
+
+```
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://packages.ros.org/ros/ubuntu bionic InRelease: The following signatures were invalid: EXPKEYSIG F42ED6FBAB17C654 Open Robotics <info@osrfoundation.org>
+E: The repository 'http://packages.ros.org/ros/ubuntu bionic InRelease' is not signed.
+```
+
+Details of this error: https://discourse.ros.org/t/ros-gpg-key-expiration-incident/20669
+
+There are two ways to solve this.
+
+#### 1. Update the ros-desktop-vnc image
+
+Stop the container and re-pull the image.
+
+Example command:
+
+```
+docker pull tiryoh/ros-desktop-vnc:melodic
+```
+
+#### 2. Update the key (temporary fix)
+
+If you do not want to stop the container, you can update the key manually.  
+NOTE: This is a temporaly fix. Please consider updating the image.
+
+Example command:
+
+```
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
+apt update
+```
+
 ## License
 
 Copyright 2020 Tiryoh\<tiryoh@gmail.com\>
