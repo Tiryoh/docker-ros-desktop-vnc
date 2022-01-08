@@ -2,6 +2,18 @@
 ## [Unreleased]
 
 
+<a name="v1.2.0"></a>
+## [v1.2.0] - 2022-01-08
+### CI
+- Fix deploy log URL ([#32](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/32))
+- Create multi architecture image ([#31](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/31))
+- Simplify authentication ([#30](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/30))
+
+### Features
+- Add Dockerfile for noetic-arm64 to support Apple Silicon ([#20](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/20))
+- Drop ROS Kinetic support ([#23](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/23))
+
+
 <a name="v1.1.1"></a>
 ## [v1.1.1] - 2021-05-04
 ### CI
@@ -9,6 +21,7 @@
 
 ### Chore
 - Update git-chglog config ([#21](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/21))
+
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2021-05-04
@@ -77,7 +90,8 @@
 - Fix ENV ROS_DISTRO from dashing to melodic([#1](https://github.com/Tiryoh/docker_ros-desktop-vnc/pull/1))
 
 
-[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.2.0...HEAD
+[v1.2.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.1...v1.2.0
 [v1.1.1]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.0...v1.1.1
 [v1.1.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v0.3.1...v1.0.0
