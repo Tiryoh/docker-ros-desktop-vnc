@@ -78,7 +78,7 @@ jobs:
         uses: Tiryoh/gha-jobid-action@v0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          job_name: build-and-deploy (${{ matrix.ros-distro }})
+          job_name: build-and-deploy (${{ matrix.ros-distro }}, ${{ matrix.experimental }})
 
       - name: Update GitHub wiki
         env:
