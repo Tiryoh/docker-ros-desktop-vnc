@@ -1,7 +1,6 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:focal-arm64
 LABEL maintainer="Tiryoh<tiryoh@gmail.com>"
 
-RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 http://archive.ubuntu.com/ubuntu/!' /etc/apt/sources.list
 RUN apt-get update -q && \
     apt-get upgrade -yq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu && \
