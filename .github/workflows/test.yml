@@ -36,7 +36,7 @@ jobs:
         run: |
           docker save $DOCKER_USERNAME/$DOCKER_IMAGENAME:${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }} | gzip > ${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}.tar.gz
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         continue-on-error: true
         with:
           name: docker-${{ matrix.ros-distro }}-${{ steps.docker.outputs.timestamp }}
