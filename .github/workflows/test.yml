@@ -21,7 +21,7 @@ jobs:
         ros-distro: [melodic, melodic-arm64, noetic, noetic-testing, noetic-arm64]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: docker/setup-qemu-action@v2
 
