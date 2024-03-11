@@ -100,7 +100,7 @@ jobs:
 
       - name: Get Current Job Log URL
         id: jobs
-        uses: Tiryoh/gha-jobid-action@v0
+        uses: Tiryoh/gha-jobid-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           job_name: build-and-deploy (${{ matrix.ros-distro }}, ${{ matrix.experimental }})
