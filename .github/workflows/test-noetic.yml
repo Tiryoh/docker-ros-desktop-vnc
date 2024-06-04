@@ -2,7 +2,7 @@ name: Build and Test (Noetic)
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - "noetic/**"
       - ".github/workflows/test-noetic.yml"

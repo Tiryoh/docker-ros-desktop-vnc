@@ -2,7 +2,7 @@ name: Publish to Registry (Noetic)
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "noetic/**"
       - ".github/workflows/deploy-noetic.yml"

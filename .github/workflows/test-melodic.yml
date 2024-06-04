@@ -2,7 +2,7 @@ name: Build and Test (Melodic)
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - "melodic/**"
       - ".github/workflows/test-melodic.yml"
