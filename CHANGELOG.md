@@ -2,6 +2,21 @@
 ## [Unreleased]
 
 
+<a name="v1.3.0"></a>
+## [v1.3.0] - 2024-06-04
+### Chore
+- Bump docker/setup-qemu-action from 2 to 3 ([#49](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/49))
+- Bump docker/metadata-action from 3 to 4 ([#42](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/42))
+- Bump actions/checkout from 2 to 3 ([#44](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/44))
+- Bump docker/login-action from 1 to 2 ([#43](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/43))
+- Bump docker/setup-qemu-action from 1 to 2 ([#41](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/41))
+- Create dependabot.yml ([#40](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/40))
+- Add docker label ([#34](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/34))
+
+### Fix
+- Fix GPG error on Ubuntu 20.04 ([#35](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/35))
+
+
 <a name="v1.2.0"></a>
 ## [v1.2.0] - 2022-01-08
 ### CI
@@ -90,7 +105,8 @@
 - Fix ENV ROS_DISTRO from dashing to melodic([#1](https://github.com/Tiryoh/docker_ros-desktop-vnc/pull/1))
 
 
-[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.1...v1.2.0
 [v1.1.1]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.0...v1.1.1
 [v1.1.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.0.0...v1.1.0
