@@ -106,11 +106,15 @@ RUN apt-get update -q && \
 
 RUN rosdep update
 
-RUN apt-get update -q && \
+# Gazebo packages for arm64 are not maintained.
+# http://repositories.ros.org/status_page/ros_noetic_dbv8.html?q=ign
+RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
+    apt-get update -q && \
     apt-get install -y \
     ros-${ROS_DISTRO}-gazebo-ros-pkgs \
     ros-${ROS_DISTRO}-ros-ign-gazebo && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* \
+    fi
 
 # Enable apt-get completion after running `apt-get update` in the container
 RUN rm /etc/apt/apt.conf.d/docker-clean
