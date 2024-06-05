@@ -29,5 +29,5 @@ jobs:
           submodules: true
       - uses: Tiryoh/docker-ros2-desktop-vnc/.github/actions/test@master
         with:
-          ros-distro: noetic
+          ros-distro: melodic
           arch: ${{ matrix.arch }}
