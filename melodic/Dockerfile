@@ -60,7 +60,7 @@ RUN curl -sL "https://github.com/krallin/tini/releases/download/v0.19.0/tini-$TA
 # https://github.com/numpy/numpy/issues/24377
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
     pip3 install --no-cache-dir 'cython<3' && \
-    pip3 install --no-cache-dir --no-build-isolation numpy; \
+    pip3 install --no-cache-dir numpy; \
     fi
 # noVNC and Websockify
 RUN git clone https://github.com/AtsushiSaito/noVNC.git -b add_clipboard_support /usr/lib/novnc
