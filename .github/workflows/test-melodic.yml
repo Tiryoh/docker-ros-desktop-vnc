@@ -1,0 +1,33 @@
+name: Build and Test (Melodic)
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "melodic/**"
+      - ".github/workflows/test-melodic.yml"
+  schedule:
+    - cron: "0 2 * * 0" # Weekly on Sundays at 02:00
+  workflow_dispatch:
+
+env:
+  DOCKER_USERNAME: tiryoh
+  DOCKER_IMAGENAME: ros
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [arm64, amd64]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - uses: Tiryoh/docker-ros2-desktop-vnc/.github/actions/test@master
+        with:
+          ros-distro: melodic
+          arch: ${{ matrix.arch }}

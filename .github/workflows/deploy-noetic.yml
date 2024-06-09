@@ -1,0 +1,34 @@
+name: Publish to Registry (Noetic)
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "noetic/**"
+      - ".github/workflows/deploy-noetic.yml"
+  schedule:
+    - cron: "7 4 * * 0" # Weekly on Sundays at 13:07 (JST)
+  workflow_dispatch:
+
+env:
+  DOCKER_USERNAME: tiryoh
+  DOCKER_IMAGENAME: ros
+  GIT_CONFIG_USER: Tiryoh@GitHubActions
+  GIT_CONFIG_EMAIL: tiryoh@gmail.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - uses: Tiryoh/docker-ros2-desktop-vnc/.github/actions/deploy@master
+        with:
+          ros-distro: noetic
+          latest: false
+          gha-job-name: build-and-deploy
+          dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
