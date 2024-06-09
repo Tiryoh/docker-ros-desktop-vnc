@@ -58,7 +58,7 @@ RUN curl -sL "https://github.com/krallin/tini/releases/download/v0.19.0/tini-$TA
 
 # Fix numpy install error
 # https://github.com/numpy/numpy/issues/24377
-RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
+RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
     pip3 install --no-cache-dir 'cython<3' && \
     pip3 install --no-cache-dir numpy; \
     fi

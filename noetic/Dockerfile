@@ -48,12 +48,6 @@ RUN apt-get update && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-# Fix numpy install error
-# https://github.com/numpy/numpy/issues/24377
-RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
-    pip install --no-cache-dir 'cython<3' && \
-    pip install --no-cache-dir --no-build-isolation numpy; \
-    fi
 # noVNC and Websockify
 RUN git clone https://github.com/AtsushiSaito/noVNC.git -b add_clipboard_support /usr/lib/novnc
 RUN pip install --no-cache-dir git+https://github.com/novnc/websockify.git@v0.10.0
