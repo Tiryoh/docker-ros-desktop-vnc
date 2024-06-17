@@ -12,7 +12,7 @@ on:
 
 env:
   DOCKER_USERNAME: tiryoh
-  DOCKER_IMAGENAME: ros
+  DOCKER_IMAGENAME: ros-desktop-vnc
   GIT_CONFIG_USER: Tiryoh@GitHubActions
   GIT_CONFIG_EMAIL: tiryoh@gmail.com
 
