@@ -2,6 +2,23 @@
 ## [Unreleased]
 
 
+<a name="v2.0.0"></a>
+## [v2.0.0] - 2024-08-30
+### Chore
+- Bump ubuntu in /noetic ([#59](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/59))
+
+### Documentation
+- Update status badge ([#60](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/60))
+
+### Features
+- Update dependabot config to check dockerfile ([#58](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/58))
+- Update base image ([#53](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/53))
+
+### Fix
+- Add workaround for issue when image is created with "docker commit" ([#57](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/57))
+- Fix docker image name ([#55](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/55))
+
+
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2024-06-04
 ### Chore
@@ -23,6 +40,10 @@
 - Fix deploy log URL ([#32](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/32))
 - Create multi architecture image ([#31](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/31))
 - Simplify authentication ([#30](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/30))
+
+### Documentation
+- Add FAQ ([#29](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/29))
+- Add link to ros2-desktop-vnc
 
 ### Features
 - Add Dockerfile for noetic-arm64 to support Apple Silicon ([#20](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/20))
@@ -77,6 +98,10 @@
 
 <a name="v0.1.0"></a>
 ## [v0.1.0] - 2020-05-24
+### Documentation
+- Add links and details ([#4](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/4))
+- Update the execution command ([#2](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/2))
+
 ### Features
 - Add ROS Noetic ([#9](https://github.com/Tiryoh/docker-ros-desktop-vnc/issues/9))
 
@@ -96,6 +121,12 @@
 - Add GHA settings
 - Add license file
 
+### Documentation
+- Update description
+- Fix typo
+- Update Docker tags
+- Create README
+
 ### Features
 - Add ROS Kinetic Dockerfile
 - Add ROS Melodic Dockerfile
@@ -104,8 +135,8 @@
 
 - Fix ENV ROS_DISTRO from dashing to melodic([#1](https://github.com/Tiryoh/docker_ros-desktop-vnc/pull/1))
 
-
-[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.3.0...v2.0.0
 [v1.3.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.1...v1.2.0
 [v1.1.1]: https://github.com/Tiryoh/docker-ros-desktop-vnc/compare/v1.1.0...v1.1.1

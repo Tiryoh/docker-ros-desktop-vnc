@@ -12,15 +12,17 @@ options:
           - refactor
           - chore
           - ci
+          - docs
   commit_groups:
       title_maps:
         feat: Features
         ci: CI
+        docs: Documentation
     #   fix: Bug Fixes
     #   perf: Performance Improvements
     #   refactor: Code Refactoring
   header:
-    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern: "^(\\w*)\\(?.*\\)?\\:\\s(.*)$"
     pattern_maps:
       - Type
       - Subject
