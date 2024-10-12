@@ -17,16 +17,28 @@ jobs:
 
       - name: Download and extract the vulnerability DB
         run: |
-          mkdir -p $GITHUB_WORKSPACE/.cache/trivy/db
-          oras pull ghcr.io/aquasecurity/trivy-db:2 || oras pull ghcr.io/tiryoh/aquasecurity/trivy-db:2
-          tar -xzf db.tar.gz -C $GITHUB_WORKSPACE/.cache/trivy/db
+          mkdir -p "$GITHUB_WORKSPACE/.cache/trivy/db"
+          if ! (oras pull ghcr.io/aquasecurity/trivy-db:2 || oras pull ghcr.io/tiryoh/aquasecurity/trivy-db:2); then
+            echo "Failed to pull database" >&2
+            exit 1
+          fi
+          if ! tar -xzf db.tar.gz -C "$GITHUB_WORKSPACE/.cache/trivy/db"; then
+            echo "Failed to extract database" >&2
+            exit 1
+          fi
           rm db.tar.gz
 
       - name: Download and extract the Java DB
         run: |
-          mkdir -p $GITHUB_WORKSPACE/.cache/trivy/java-db
-          oras pull ghcr.io/aquasecurity/trivy-java-db:1 || oras pull ghcr.io/tiryoh/aquasecurity/trivy-java-db:1
-          tar -xzf javadb.tar.gz -C $GITHUB_WORKSPACE/.cache/trivy/java-db
+          mkdir -p "$GITHUB_WORKSPACE/.cache/trivy/java-db"
+          if ! (oras pull ghcr.io/aquasecurity/trivy-java-db:1 || oras pull ghcr.io/tiryoh/aquasecurity/trivy-java-db:1); then
+            echo "Failed to pull Java database" >&2
+            exit 1
+          fi
+          if ! tar -xzf javadb.tar.gz -C "$GITHUB_WORKSPACE/.cache/trivy/java-db"; then
+            echo "Failed to extract Java database" >&2
+            exit 1
+          fi
           rm javadb.tar.gz
 
       - name: Cache DBs
