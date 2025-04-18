@@ -21,7 +21,7 @@ Run the docker container and access with port `6080`.
 Change the `shm-size` value depending on the situation.
 
 ```
-docker run -p 6080:80 --shm-size=512m tiryoh/ros-desktop-vnc:melodic
+docker run -p 6080:80 --shm-size=512m ghcr.io/tiryoh/ros-desktop-vnc:noetic
 ```
 
 Browse http://127.0.0.1:6080/.
@@ -59,7 +59,7 @@ Stop the container and re-pull the image.
 Example command:
 
 ```
-docker pull tiryoh/ros-desktop-vnc:melodic
+docker pull ghcr.io/tiryoh/ros-desktop-vnc:melodic
 ```
 
 #### 2. Update the key (temporary fix)
